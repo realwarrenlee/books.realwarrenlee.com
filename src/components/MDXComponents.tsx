@@ -1,44 +1,4 @@
 import { ReactNode } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableCaption,
-} from "@/components/ui/table";
-
-// Enhanced table components with width control
-interface TableHeadWithWidthProps {
-  children: ReactNode;
-  width?: string;
-  className?: string;
-}
-
-interface TableCellWithWidthProps {
-  children: ReactNode;
-  width?: string;
-  className?: string;
-}
-
-const TableHeadWithWidth = ({ children, width, className = "" }: TableHeadWithWidthProps) => (
-  <TableHead 
-    className={className} 
-    style={width ? { width } : undefined}
-  >
-    {children}
-  </TableHead>
-);
-
-const TableCellWithWidth = ({ children, width, className = "" }: TableCellWithWidthProps) => (
-  <TableCell 
-    className={className} 
-    style={width ? { width } : undefined}
-  >
-    {children}
-  </TableCell>
-);
 
 export const MDXComponents = {
   h1: ({ children }: { children: ReactNode }) => (
@@ -114,15 +74,4 @@ export const MDXComponents = {
       {children}
     </td>
   ),
-  // React Table Components - can be used directly in MDX
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableCaption,
-  // Enhanced table components with width control
-  TableHeadWithWidth,
-  TableCellWithWidth,
 };
